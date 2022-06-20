@@ -1,0 +1,8 @@
+<launch>
+        <!-- To disperse particles POSEARRAY at start -->
+    <node pkg="project_localization" type="particle_cloud.py" name="service_client" output="screen">
+    </node>
+         <!-- To move Hokuyo arround  to check project_localization -->
+    <node pkg="project_localization" type="project_localization_move.py" name="service_client_particles" output="screen">
+    </node>
+</launch>

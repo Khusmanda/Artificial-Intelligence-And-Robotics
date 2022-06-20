@@ -1,0 +1,11 @@
+<launch>
+    <arg name="scan_topic" default="/scan" />
+    <arg name="map_file" default="$(find project_mapping)/map/project_mapping_map.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    <arg name="use_map_topic" default="true"/>
+
+    <node pkg="amcl" type="amcl" name="amcl">
+        <rosparam file="$(find project_localization)/param/project_localization_param.yaml" command="load" />
+        <remap from="scan" to="$(arg scan_topic)"/>
+    </node>
+</launch>

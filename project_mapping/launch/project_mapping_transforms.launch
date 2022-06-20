@@ -1,0 +1,8 @@
+<launch>
+    <!-- 10 cm higher 0 0 0.1 -->
+    <!-- 45 degree horizontal 0 0.79 0 -->
+    <!-- 10Hz is 100ms -->
+    <node pkg="tf" type="static_transform_publisher" name="static_tf_node"
+          args="0 0 0.1 0 0.79 0 base_link nerf_cannon 100">
+    </node>
+</launch>
